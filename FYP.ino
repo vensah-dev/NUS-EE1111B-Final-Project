@@ -414,16 +414,8 @@ void loop() {
       previousErrorIR = 0;
       previousTime = millis();
 
-      // Notice how every wall on the right of a colour paper is missing? (one exception is the map at the far right [pun intended])
-      // rightUS has a max value of 19cm with walls on both sides. Thus, 20cm and above means there is no wall on the right
-      // When there is no wall to the right, the current cell has a coloured paper.
-      // Thus, slow down speed to fastest speed where it can stop after detecting black without hitting the wall
+      runMotors(255, 255);
 
-      if (rightUS > 20) {
-        runMotors(255, 255);  // run speed slower in order to make it detect the black strip and stop without hitting the wall
-      } else {
-        runMotors(255, 255);
-      }
     }
   }
 }
